@@ -43,43 +43,10 @@ variable "tags" {
   }
 }
 
-variable "vnet_name" {
-  type        = string
-  description = "The name of the vnet"
-  default     = "vnet-sanyi"
-}
+variable "vnet_name" {}
 
-variable "vnet_address_space" {
-  type        = list(any)
-  description = "the address space of the VNet"
-  default     = ["10.13.0.0/16"]
-}
+variable "vnet_address_space" {}
 
-variable "subnets" {
-  type = map(any)
-  default = {
-    subnet_1 = {
-      name             = "subnet_1"
-      address_prefixes = ["10.13.1.0/24"]
-    }
-    subnet_2 = {
-      name             = "subnet_2"
-      address_prefixes = ["10.13.2.0/24"]
-    }
-    subnet_3 = {
-      name             = "subnet_3"
-      address_prefixes = ["10.13.3.0/24"]
-    }
-    # The name must be AzureBastionSubnet
-    bastion_subnet = {
-      name             = "AzureBastionSubnet"
-      address_prefixes = ["10.13.250.0/24"]
-    }
-  }
-}
+variable "subnets" {}
 
-variable "bastionhost_name" {
-  type        = string
-  description = "The name of the basion host"
-  default     = "sanyi-bastion"
-}
+variable "bastionhost_name" {}
