@@ -1,7 +1,7 @@
 variable "bkstrgrg" {
   type        = string
   description = "The name of the backend storage account resource group"
-  default     = "rg-sanhorva"
+  default     = "rg-sanhorva0011"
 }
 
 variable "bkstrg" {
@@ -25,7 +25,7 @@ variable "bkstrgkey" {
 variable "resourcegroup_name" {
   type        = string
   description = "The name of the resource group"
-  default     = "rg-sanhorva"
+  default     = "rg-sanhorva0011"
 }
 
 variable "location" {
