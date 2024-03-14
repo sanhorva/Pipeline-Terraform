@@ -31,12 +31,12 @@ stages:
             backendAzureRmStorageAccountName: '$(bkstrg)'
             backendAzureRmContainerName: '$(bkcontainer)'
             backendAzureRmKey: '$(bkstrgkey)'
-
         - task: TerraformTaskV4@4
           displayName: validate
           inputs:
             provider: 'azurerm'
             command: 'validate'
+
   - stage: tfdeploy
     condition: succeeded('tfvalidate')
     dependsOn: tfvalidate
@@ -57,15 +57,19 @@ stages:
             backendAzureRmStorageAccountName: '$(bkstrg)'
             backendAzureRmContainerName: '$(bkcontainer)'
             backendAzureRmKey: '$(bkstrgkey)'          
+
         - task: TerraformTaskV4@4
           displayName: plan
           inputs:
             provider: 'azurerm'
             command: 'plan'
             environmentServiceNameAzureRM: 'ZEISSgroup-DI05-ASM-Learning'
+
         - task: TerraformTaskV4@4
           displayName: apply
           inputs:
             provider: 'azurerm'
             command: 'apply'
             environmentServiceNameAzureRM: 'ZEISSgroup-DI05-ASM-Learning'
+
+
