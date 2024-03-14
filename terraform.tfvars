@@ -25,7 +25,7 @@ subnets = {
   }
   bastion_subnet = {
     name             = "AzureBastionSubnet"
-    address_prefixes = ["10.211.250.0/24"]
+    address_prefixes = ["10.211.5.0/24"]
   }
 }
 
