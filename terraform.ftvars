@@ -1,7 +1,7 @@
 
 # Deployment Config
 
-resourcegroup_name = "rg-sanhorva"
+resourcegroup_name = "rg-sanhorva0011"
 
 location = "West Europe"
 
